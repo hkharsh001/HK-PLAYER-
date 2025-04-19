@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neon VLC Web App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Neon VLC Player</h1>
+
+    <input type="file" id="fileInput" multiple accept="audio/*,video/*" />
+    <input type="file" id="subtitleInput" accept=".vtt,.srt" />
+
+    <video id="mediaPlayer" controls>
+      <track id="subtitleTrack" kind="subtitles" label="Subtitles" srclang="en" />
+    </video>
+
+    <div class="controls">
+      <label>Speed:</label>
+      <select id="speedControl">
+        <option value="0.5">0.5x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+      </select>
+      <button id="pipBtn">Picture-in-Picture</button>
+      <button id="screenshotBtn">Screenshot</button>
+    </div>
+
+    <canvas id="visualizer"></canvas>
+
+    <h2>Playlist</h2>
+    <ul id="playlist"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
